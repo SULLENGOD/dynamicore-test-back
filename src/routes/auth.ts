@@ -5,7 +5,7 @@ const router: Router = Router();
 import { TokenValidation } from '../libs/verifyToken';
 
 
-//No hay get '/'
+router.get('/', (req, res) => res.send('test api'))
 router.get('/profile', TokenValidation, profile);
 
 router.post('/signup', signup);
