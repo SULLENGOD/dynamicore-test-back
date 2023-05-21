@@ -13,7 +13,7 @@ router.post('/signin', signin);
 
 router.put('/add-contact', TokenValidation, addContact);
 
-router.delete('/delete-contact', deleteContact);
+router.delete('/delete-contact', TokenValidation, deleteContact);
 
 
 export default router;

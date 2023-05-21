@@ -4,10 +4,11 @@ const express_1 = require("express");
 const auth_controller_1 = require("../controllers/auth.controller");
 const router = (0, express_1.Router)();
 const verifyToken_1 = require("../libs/verifyToken");
+router.get('/', (req, res) => res.send('Test api'));
 router.get('/profile', verifyToken_1.TokenValidation, auth_controller_1.profile);
 router.post('/signup', auth_controller_1.signup);
 router.post('/signin', auth_controller_1.signin);
 router.put('/add-contact', verifyToken_1.TokenValidation, auth_controller_1.addContact);
-router.delete('/delete-contact', auth_controller_1.deleteContact);
+router.delete('/delete-contact', verifyToken_1.TokenValidation, auth_controller_1.deleteContact);
 exports.default = router;
 //# sourceMappingURL=auth.js.map

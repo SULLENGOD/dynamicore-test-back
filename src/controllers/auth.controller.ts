@@ -91,7 +91,7 @@ export const deleteContact = async (req: Request, res: Response) => {
     } catch (error) {
       res.status(500).json('Error deleting contact');
     }
-  };
+  }
   
 
 

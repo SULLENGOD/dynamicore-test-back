@@ -1,6 +1,8 @@
 import mongoose from "mongoose";
 
-mongoose.connect('mongodb://localhost/test', {
+const mongoUrl = process.env.MONGO_URL || ''
+
+mongoose.connect(mongoUrl, {
 
 })
     .then( db => console.log('DB is online'))
